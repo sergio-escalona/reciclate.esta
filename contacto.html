@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reciclate esta - Contacto</title>
+  <meta name="description" content="Reciclaje y medio Ambiente">    
+  <link rel="stylesheet" href="css/flexboxgrid.min.css">    
+  <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
+  <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="header"></div>
+
+  <section class="row main">
+    <div class="contacto col-xs-10 col-md-3 center-xs">
+      <h2>Contacto</h2>
+
+      <form action="post" method="post" id="contacto" onsubmit="return validar()">
+        
+        <div class="formulario">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="control-formulario" id="nombre" name="nombre" placeholder="Juan Recicle"  onkeypress="return (event.charCode == 209 || event.charCode == 241 || (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))">
+          <div id="enombre" class="error"></div>
+        </div>
+        
+        <div class="formulario">
+          <label for="correo">Correo</label>
+          <input type="text" class="control-formulario" id="correo" name="correo" placeholder="tu@correo.com">
+          <div id="ecorreo" class="error"></div>
+        </div>
+
+        <div class="formulario">
+          <label for="fono">Teléfono</label>
+          <input type="number" class="control-formulario" id="fono" name="fono" placeholder="123456789">
+          <div id="efono" class="error"></div>
+        </div>
+
+        <div class="formulario">
+          <label for="mensaje">Mensaje</label>
+          <textarea name="mensaje" id="mensaje" rows="5"></textarea>
+          <div id="emensaje" class="error"></div>
+        </div>
+
+        <div class="formulario">
+          <label for="motivo">Motivo</label>
+          <select name="motivo" id="motivo" class="control-formulario">
+            <option value="" disabled selected hidden>Elija motivo</option>
+            <option value="Sugerencia">Sugerencia</option>
+            <option value="Queja">Queja</option>
+            <option value="Trabajar">Trabajar con nosotros</option>
+            <option value="Donar">Donación</option>
+          </select>
+          <div id="emotivo" class="error"></div>
+        </div>
+
+        <div class="formulario">
+          <label for="respuesta">Quiere que se le responda</label>
+          <input type="checkbox" id="respuesta" name="mensaje">
+        </div>
+
+        <div class="formulario">
+          <input type="submit" class="boton enviar" id="enviar" value="Enviar">
+        </div>
+
+        <div id="confirmacion" class="exito"></div>
+      </form>
+    </div>
+  </section>
+  <div class="footer"></div>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="owlcarousel/owl.carousel.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
