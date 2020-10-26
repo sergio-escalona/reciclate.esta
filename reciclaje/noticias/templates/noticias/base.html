@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Reciclate esta</title>
+        <meta name="description" content="Reciclaje y Medio Ambiente">    
+        <link rel="stylesheet" href="{% static 'css/flexboxgrid.min.css' %}">    
+        <link rel="stylesheet" href="{% static 'owlcarousel/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'owlcarousel/owl.theme.default.min.css' %}">
+        <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header>
+            <div class="menu row">
+            
+            <img class="logos" src="{% static 'img/logos.jpg' %}" alt="log">
+            <img class="logo" src="{% static 'img/logo.gif' %}" alt="logo">
+            <div id="menu_responsivo" class="menu_resp">
+            <a href="{% url 'inicio' %}">Inicio</a>
+            <a href="{% url 'nosotros' %}">Sobre Nosotros</a>
+            <a href="{% url 'lista_noticias' %}">Noticias</a>
+            <a href="{% url 'proyectos' %}">Proyectos</a>
+            <a href="{% url 'contacto' %}">Contacto</a>
+            <a href="javascript:void(0);" class="icon" onclick="menuResponsivo()">
+                <i class="fa fa-bars"></i>☰</a>
+            </div>   
+            
+            </div>
+
+        </header>
+
+        {% block content %}
+        {% endblock %}
+
+        <footer>
+            <h2 class="col-xs-12">Redes Sociales</h2>
+            <a href="https://www.facebook.com" target="_blank"><img src="{% static 'img/face.png' %}" alt="Facebook"></a>
+            <a href="https://www.instagram.com" target="_blank"><img src="{% static 'img/insta.png' %}" alt="Instagram"></a>
+            <a href="https://twitter.com" target="_blank"><img src="{% static 'img/twit.png' %}" alt="Twitter"></a>
+            <a href="https://www.youtube.com" target="_blank"><img src="{% static 'img/yt.png' %}" alt="Youtube"></a>
+            <a href="https://gmail.com" target="_blank"><img src="{% static 'img/gmail.png' %}" alt="GMail"></a>
+            <br>
+            <br>
+            <p>Derechos reservados 2020©</p>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="{% static 'owlcarousel/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'script.js' %}"></script>
+    </body>
+</html>

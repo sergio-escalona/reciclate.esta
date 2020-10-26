@@ -1,59 +1,41 @@
+{% extends 'noticias/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Reciclate esta</title>
-    <meta name="description" content="Reciclaje y Medio Ambiente">    
-    <link rel="stylesheet" href="{% static 'css/flexboxgrid.min.css' %}">    
-    <link rel="stylesheet" href="{% static 'owlcarousel/owl.carousel.min.css' %}">
-    <link rel="stylesheet" href="{% static 'owlcarousel/owl.theme.default.min.css' %}">
-    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div class="header"></div>
 
-    <section>
-     <div class="contenedor">
-       <div class="owl-carousel">
-        <div> <img src="{% static 'img/xd.jpg' %}" alt="img1"> </div>
-        <div> <img src="{% static 'img/xd1.jpg' %}" alt="img2"> </div>
-        <div> <img src="{% static 'img/xd2.jpg' %}" alt="img3"> </div>
-        <div> <img src="{% static 'img/xd3.jpg' %}" alt="img4"> </div>
-        <div> <img src="{% static 'img/xd4.jpg' %}" alt="img5"> </div>
-        <div> <img src="{% static 'img/xd5.png' %}" alt="img6"> </div>
-       </div>
-     </div>
-    </section>
-
-    <section class="center-xs">
-      <div class="cuerpo row">
-       <img src="{% static 'img/reciclaje.jpg' %}" alt="Reciclaje" title="Reciclaje" class="col-xs-12 col-lg-3">
-        <h3 class="col-xs-11 col-lg-3">¿Qué es el reciclaje?</h3>
-       <p class="col-xs-11 col-lg-4">
-        El reciclaje es un proceso donde las materias primas que componen los materiales que usamos en la vida diaria como el papel, vidrio, aluminio, plástico, etc; una vez terminados su ciclo de vida útil, se transforman en nuevos materiales.</p>
+{% block content %}
+  <section>
+      <div class="contenedor">
+        <div class="owl-carousel">
+          <div> <img src="{% static 'img/xd.jpg' %}" alt="img1"> </div>
+          <div> <img src="{% static 'img/xd1.jpg' %}" alt="img2"> </div>
+          <div> <img src="{% static 'img/xd2.jpg' %}" alt="img3"> </div>
+          <div> <img src="{% static 'img/xd3.jpg' %}" alt="img4"> </div>
+          <div> <img src="{% static 'img/xd4.jpg' %}" alt="img5"> </div>
+          <div> <img src="{% static 'img/xd5.png' %}" alt="img6"> </div>
+        </div>
       </div>
-      <div class="cuerpo row">
-        <h3 class="col-xs-11 col-lg-3">¿Por qué reciclar?</h3>
+  </section>
+
+  <section class="center-xs">
+        <div class="cuerpo row">
+        <img src="{% static 'img/reciclaje.jpg' %}" alt="Reciclaje" title="Reciclaje" class="col-xs-12 col-lg-3">
+          <h3 class="col-xs-11 col-lg-3">¿Qué es el reciclaje?</h3>
         <p class="col-xs-11 col-lg-4">
+          El reciclaje es un proceso donde las materias primas que componen los materiales que usamos en la vida diaria como el papel, vidrio, aluminio, plástico, etc; una vez terminados su ciclo de vida útil, se transforman en nuevos materiales.</p>
+        </div>
+        <div class="cuerpo row">
+          <h3 class="col-xs-11 col-lg-3">¿Por qué reciclar?</h3>
+          <p class="col-xs-11 col-lg-4">
 
-         En el mundo se producen más de dos mil millones de toneladas de residuos al año, y si no se toman medidas relevantes se llegaran a más de tres mil millones al año 2050. El 12% de estos residuos corresponde a plásticos, uno de los componentes con mayores problemas para su aprovechamiento. He aquí donde necesitas las 3Rs, Reducir, Reutilizar y Reciclar.</p>
-        <img src="{% static 'img/reci7.jpg' %}" alt="3 R" title="Las 3 R" class="col-xs-11 col-lg-3 first-xs last-lg">
-      </div>
-      <div class="cuerpo row">
-        <img src="{% static 'img/papel.jpg' %}" alt="¿Qué podemos reciclar?" title="¿Qué podemos reciclar?" class="col-xs-12 col-lg-3">
-        <h3 class="col-xs-11 col-lg-3">¿Qué podemos reciclar?</h3>
-        <p class="col-xs-11 col-lg-4">
+          En el mundo se producen más de dos mil millones de toneladas de residuos al año, y si no se toman medidas relevantes se llegaran a más de tres mil millones al año 2050. El 12% de estos residuos corresponde a plásticos, uno de los componentes con mayores problemas para su aprovechamiento. He aquí donde necesitas las 3Rs, Reducir, Reutilizar y Reciclar.</p>
+          <img src="{% static 'img/reci7.jpg' %}" alt="3 R" title="Las 3 R" class="col-xs-11 col-lg-3 first-xs last-lg">
+        </div>
+        <div class="cuerpo row">
+          <img src="{% static 'img/papel.jpg' %}" alt="¿Qué podemos reciclar?" title="¿Qué podemos reciclar?" class="col-xs-12 col-lg-3">
+          <h3 class="col-xs-11 col-lg-3">¿Qué podemos reciclar?</h3>
+          <p class="col-xs-11 col-lg-4">
 
-         El deterioro de nuestro medio ambiente ha causado interés en el cambio de conciencia ecológica tanto en las personas como en las empresas, y esto ha conducido a buscar maniobras o estrategias para de alguna forma revertir todo el daño ocasionado en nuestro planeta. Una de los principales materiales que pueden reciclarse son: El plástico, el vidrio, el cartón, el papel, el aluminio,los aceites, los metáles y los desperdicios orgánicos. </p>        
-                
-      </div>
-    </section>
-    <div class="footer"></div>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="{% static 'owlcarousel/owl.carousel.min.js' %}"></script>
-    <script src="{% static 'script.js' %}"></script>
-  </body>
-</html>
+          El deterioro de nuestro medio ambiente ha causado interés en el cambio de conciencia ecológica tanto en las personas como en las empresas, y esto ha conducido a buscar maniobras o estrategias para de alguna forma revertir todo el daño ocasionado en nuestro planeta. Una de los principales materiales que pueden reciclarse son: El plástico, el vidrio, el cartón, el papel, el aluminio,los aceites, los metáles y los desperdicios orgánicos. </p>        
+                  
+        </div>
+  </section>
+{% endblock %}
