@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reciclate esta - Noticias</title>
-  <meta name="description" content="Reciclaje y medio Ambiente">    
-  <link rel="stylesheet" href="css/flexboxgrid.min.css">    
-  <link href="css/style.css" rel="stylesheet" type="text/css" />
-  <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">  
-</head>
-<body>
-  <div class="header"></div>
+{% extends 'noticias/base.html' %}
+{% load static %}
 
+{% block content %}
   <div class="intro">
     <h2>Selección del editor</h2>
   </div>
@@ -20,7 +10,7 @@
       <div class="item center-xs col-xs-12">
         <a href="noticia1.html">
           <div class="img-titular">
-            <img src="img/ley-reciclaje.jpg" alt="Rep recilaje" class="mini">
+            <img src="{% static 'img/ley-reciclaje.jpg' %}" alt="Rep recilaje" class="mini">
           </div>
           <div class="titulo-titular">
             <h3>¿Qué es la Ley REP?</h3>            
@@ -37,7 +27,7 @@
       <div class="item center-xs col-xs-12">
         <a href="noticia2.html">
           <div class="img-titular">
-            <img src="img/ecobot.jpg" alt="Ecobot" class="mini">
+            <img src="{% static 'img/ecobot.jpg' %}" alt="Ecobot" class="mini">
           </div>
           <div class="titulo-titular">
             <h3>Un sistema de identificación de resíduos interactivos</h3>
@@ -53,7 +43,7 @@
       <div class="item center-xs col-xs-12">
         <a href="noticia3.html">
           <div class="img-titular">
-            <img src="img/salubata.jpg" alt="Salubata" class="mini">
+            <img src="{% static 'img/salubata.jpg' %}" alt="Salubata" class="mini">
           </div>
           <div class="titulo-titular">
             <h3>La vanguardia tecnológica como herramienta para convertir los residuos en riqueza</h3>
@@ -65,10 +55,4 @@
       </div>
     </div>
   </section>
-
-  <div class="footer"></div>
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="owlcarousel/owl.carousel.min.js"></script>
-  <script src="script.js"></script>
-</body>
-</html>
+{% endblock %}
