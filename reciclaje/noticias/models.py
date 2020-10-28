@@ -20,3 +20,20 @@ class Noticias(models.Model):
     def __str__(self):
         return self.titulo
 
+motivos = [
+    [0, "Sujerencia"],
+    [1, "Queja"],
+    [2, "Trabajar con nosotros"],
+    [3, "Donación"]
+]
+
+class Contacto(models.Model):
+    nombre = models.CharField(max_length=75)
+    correo = models.EmailField()
+    telefono = models.IntegerField()
+    mensaje = models.TextField()
+    motivo = models.IntegerField(choices=motivos)
+    respuesta = models.BooleanField()
+
+    def __str__(self):
+        return self.nombre

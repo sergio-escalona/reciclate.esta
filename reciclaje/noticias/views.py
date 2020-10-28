@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, render
-from .models import Noticias
+from .models import Noticias, Contacto
 from django.utils import timezone
-from .forms import FormularioNoticia
+from .forms import FormularioNoticia, FormularioContacto
 from django.shortcuts import redirect
 
 def inicio(request):
@@ -18,7 +18,35 @@ def proyectos(request):
     return render(request, 'noticias/proyectos.html', {})
 
 def contacto(request):
-    return render(request, 'noticias/contacto.html', {})
+    data = {
+        'formCont': FormularioContacto()
+    }
+
+    if request.method == "POST":
+        contacto = FormularioContacto(data=request.POST)
+        if contacto.is_valid():
+            contacto.save()
+            data["mensaje"] = "Mensaje enviado"
+        
+        else:
+            data["formCont"] = contacto
+            data["mensaje"] = "Error al enviar mensaje"
+    return render(request, 'noticias/contacto.html', data)
+
+def fomulario_contacto(request):
+    if request.method == "POST":
+        contacto = Contacto()
+        contacto.nombre = request.POST.get('nombre')
+        contacto.correo = request.POST.get('correo')
+        contacto.telefono = request.POST.get('fono')
+        contacto.mensaje = request.POST.get('mensaje')
+        contacto.motivo = request.POST.get('motivo')
+        contacto.respuesta = request.POST.get('respuesta')
+        contacto.save()
+        return render(request, 'noticias/contacto.html', {})
+    
+    else:
+        return render(request, 'noticias/contacto.html', {})
 
 def noticia_completa(request, pk):
     noticia = get_object_or_404(Noticias, pk=pk)
