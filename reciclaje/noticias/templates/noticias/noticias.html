@@ -5,54 +5,31 @@
   <div class="intro">
     <h2>Selección del editor</h2>
   </div>
+
+{% if user.is_authenticated %}
+  <a href="{% url 'nueva_noticia' %}" class="item end-xs col-xs-1">
+    <img src="{% static 'img/agregar.png' %}" class="icono">
+  </a>
+{% endif %}
+
+  {% for noticia in noticias %}
   <section class="row">
     <div class="titular">
       <div class="item center-xs col-xs-12">
-        <a href="noticia1.html">
+        <a href="{% url 'noticia_completa' pk=noticia.pk %}">
           <div class="img-titular">
-            <img src="{% static 'img/ley-reciclaje.jpg' %}" alt="Rep recilaje" class="mini">
+            <img src="{{ noticia.imagen.url }}" class="mini">
           </div>
           <div class="titulo-titular">
-            <h3>¿Qué es la Ley REP?</h3>            
+            <h3>{{ noticia.titulo }}</h3>            
           </div>
           <div class="extracto-titular">
-            <p>La ley N° 20.920, también conocida como Ley del Reciclaje, fue publicada en 2016, pero su total implementación es un proceso gradual que lleva años...
+            <p>{{ noticia.texto|truncatechars:150 }}
             </p>
           </div>
         </a>  
       </div>  
     </div>
+  {% endfor %}
 
-    <div class="titular">
-      <div class="item center-xs col-xs-12">
-        <a href="noticia2.html">
-          <div class="img-titular">
-            <img src="{% static 'img/ecobot.jpg' %}" alt="Ecobot" class="mini">
-          </div>
-          <div class="titulo-titular">
-            <h3>Un sistema de identificación de resíduos interactivos</h3>
-          </div>
-          <div class="extracto-titular">
-            <p>Ecobot, es una de las tantas iniciativas que fomentan la modernizacion.De los puntos ecológicos. Esta iniciativa contempla la recoleccion...</p>
-          </div>  
-        </a>
-      </div>
-    </div>
-
-    <div class="titular">
-      <div class="item center-xs col-xs-12">
-        <a href="noticia3.html">
-          <div class="img-titular">
-            <img src="{% static 'img/salubata.jpg' %}" alt="Salubata" class="mini">
-          </div>
-          <div class="titulo-titular">
-            <h3>La vanguardia tecnológica como herramienta para convertir los residuos en riqueza</h3>
-          </div>
-          <div class="extracto-titular">
-            <p>Los residuos sólidos urbanos mal gestionados constituyen un grave problema, convirtiendo a nuestras ciudades en entornos menos habitables para los residentes...</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
 {% endblock %}

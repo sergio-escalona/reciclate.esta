@@ -337,6 +337,11 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 1.1em;
 }
 
+.icono{
+  height: 50px;
+  width: 50px;
+}
+
 /*proyecto*/
 .separador{
   border-top: #0aebb3 8px groove;

@@ -9,6 +9,9 @@ urlpatterns = [
     path('noticias/', views.lista_noticias, name='lista_noticias'),
     path('proyectos/', views.proyectos, name='proyectos'),
     path('contacto/', views.contacto, name='contacto'),
+    path('noticia/<int:pk>/', views.noticia_completa, name='noticia_completa'),
+    path('noticia/nueva_noticia', views.nueva_noticia, name='nueva_noticia'),
+    path('noticia/<int:pk>/editar/', views.editar_noticia, name='editar_noticia'),
 ]
 
 if settings.DEBUG:
