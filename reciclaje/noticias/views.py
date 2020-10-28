@@ -52,3 +52,8 @@ def editar_noticia(request, pk):
     else:
         formNoti = FormularioNoticia(instance=noticia)
         return render(request, 'noticias/editar_noticia.html', {'formNoti': formNoti})
+
+def eliminar_noticia(request, pk):
+    noticia = get_object_or_404(Noticias, pk=pk)
+    noticia.delete()
+    return redirect(to='lista_noticias')

@@ -12,6 +12,7 @@ urlpatterns = [
     path('noticia/<int:pk>/', views.noticia_completa, name='noticia_completa'),
     path('noticia/nueva_noticia', views.nueva_noticia, name='nueva_noticia'),
     path('noticia/<int:pk>/editar/', views.editar_noticia, name='editar_noticia'),
+    path('noticia/<int:pk>/eliminar', views.eliminar_noticia, name='eliminar_noticia'),
 ]
 
 if settings.DEBUG:
