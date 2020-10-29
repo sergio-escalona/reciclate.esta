@@ -132,7 +132,7 @@ function validar(){
     document.getElementById("mensaje").value = '';
     document.getElementById("motivo").value = '0';
     
-    return false;
+    //return false;
   }
 }
 
