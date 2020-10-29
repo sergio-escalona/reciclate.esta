@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -13,6 +13,7 @@ urlpatterns = [
     path('noticia/nueva_noticia', views.nueva_noticia, name='nueva_noticia'),
     path('noticia/<int:pk>/editar/', views.editar_noticia, name='editar_noticia'),
     path('noticia/<int:pk>/eliminar', views.eliminar_noticia, name='eliminar_noticia'),
+    path('cuenta/', include('django.contrib.auth.urls'))
 ]
 
 if settings.DEBUG:

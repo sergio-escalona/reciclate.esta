@@ -1,0 +1,28 @@
+{% extends 'noticias/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="container">
+    <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Ingreso de usuario</h2>
+                    <hr>
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+
+                        <input type="submit" value="Ingresar">
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}
