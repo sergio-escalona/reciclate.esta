@@ -30,7 +30,7 @@ motivos = [
 class Contacto(models.Model):
     nombre = models.CharField(max_length=75)
     correo = models.EmailField()
-    telefono = models.IntegerField()
+    telefono = models.IntegerField(default=None,blank=True, null=True)
     mensaje = models.TextField()
     motivo = models.IntegerField(choices=motivos)
     respuesta = models.BooleanField()
