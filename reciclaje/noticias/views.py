@@ -11,7 +11,13 @@ def nosotros(request):
     return render(request, 'noticias/nosotros.html', {})
 
 def lista_noticias(request):
-    noticias = Noticias.objects.filter(fecha_publicacion__lte=timezone.now()).order_by('fecha_publicacion')
+    usuario = request.user
+    if usuario.has_perm('noticias.editor'):
+        noticias = Noticias.objects.filter(fecha_publicacion__lte=timezone.now()).order_by('-fecha_publicacion')
+    elif  usuario.has_perm('noticias.lector'):
+        noticias = Noticias.objects.filter(fecha_publicacion__lte=timezone.now()).order_by('-fecha_publicacion').filter(etiqueta=0)
+    else:
+        noticias = Noticias.objects.filter(fecha_publicacion__lte=timezone.now()).order_by('-fecha_publicacion').filter(etiqueta=3)
     return render(request, 'noticias/noticias.html', {'noticias': noticias})
 
 def proyectos(request):

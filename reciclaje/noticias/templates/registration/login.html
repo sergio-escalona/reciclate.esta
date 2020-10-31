@@ -10,6 +10,9 @@
                 <div class="card-body">
                     <h2>Ingreso de usuario</h2>
                     <hr>
+                    {% if form.errors %}
+                    <p>Usuario y contraseña no coinciden</p>
+                    {% endif %}
                     <form action="" method="POST">
                         {% csrf_token %}
                         {{ form.as_p }}

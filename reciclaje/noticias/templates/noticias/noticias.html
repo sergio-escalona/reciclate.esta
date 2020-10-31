@@ -1,12 +1,13 @@
 {% extends 'noticias/base.html' %}
 {% load static %}
+{% load user_tags %}
 
 {% block content %}
   <div class="intro">
     <h2>Selección del editor</h2>
   </div>
 
-{% if user.is_authenticated %}
+{% if request.user|has_group:"Editor" %}
   <a href="{% url 'nueva_noticia' %}" class="item end-xs col-xs-1">
     <img src="{% static 'img/agregar.png' %}" class="icono">
   </a>
