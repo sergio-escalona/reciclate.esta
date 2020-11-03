@@ -59,6 +59,11 @@ img{
   padding: 20px 30px;
 }
 
+.editar{
+  padding: 15px;
+  text-align: right;
+}
+
 /*carrusel*/
 .owl-carousel .owl-nav button.owl-prev {
   left: 0;
