@@ -5,12 +5,15 @@
 {% block content %}
 
 {% if request.user|has_group:"Editor" %}
-    <a class="btn btn-default" href="{% url 'editar_noticia' pk=noticia.pk %}">
-        <img src="{% static 'img/editar.png' %}" class="icono">
-    </a>
-    <a class="btn btn-default" href="{% url 'eliminar_noticia' pk=noticia.pk %}">
-        <img src="{% static 'img/delete.png' %}" class="icono">
-    </a>
+    <div class="editar">
+        <a  href="{% url 'editar_noticia' pk=noticia.pk %}">
+            <img src="{% static 'img/editar.png' %}" class="icono">
+        </a>
+        <a  href="{% url 'eliminar_noticia' pk=noticia.pk %}">
+            <img src="{% static 'img/delete.png' %}" class="icono">
+        </a>
+    </div>
+    
 {% endif %}
 
 <section class="noticia row">

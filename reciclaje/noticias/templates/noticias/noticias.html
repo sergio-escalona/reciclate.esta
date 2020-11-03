@@ -8,9 +8,11 @@
   </div>
 
 {% if request.user|has_group:"Editor" %}
+<div class="editar">
   <a href="{% url 'nueva_noticia' %}" class="item end-xs col-xs-1">
     <img src="{% static 'img/agregar.png' %}" class="icono">
   </a>
+</div>  
 {% endif %}
 
   {% for noticia in noticias %}
