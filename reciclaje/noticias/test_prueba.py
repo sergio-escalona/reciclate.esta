@@ -1,10 +1,5 @@
 import unittest
-from reciclaje.noticias.models import Contacto, Noticias
-from django.utils import timezone
-from django.http import request
-from .prueba import listar, contacto
-
-
+from prueba import listar, contacto
 
 class TestProbar(unittest.TestCase):
     def test_listar(self):
