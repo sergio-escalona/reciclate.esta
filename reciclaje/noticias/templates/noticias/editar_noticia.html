@@ -1,9 +1,12 @@
 {% extends 'noticias/base.html' %}
 
 {% block content %}
-    <h2>Nueva noticia</h2>
-    <form method="POST" class="post-form" enctype="multipart/form-data">{% csrf_token %}
-        {{ formNoti.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
-    </form>
+    <div class="col-xs-12">
+        <h2>Nueva noticia</h2>
+        <form method="POST" class="post-form" enctype="multipart/form-data">{% csrf_token %}
+            {{ formNoti.as_p }}
+            <button type="submit" class="save btn btn-default">Save</button>
+        </form>
+    </div>
+    
 {% endblock %}
