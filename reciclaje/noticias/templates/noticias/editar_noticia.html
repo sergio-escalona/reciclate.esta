@@ -1,12 +1,13 @@
 {% extends 'noticias/base.html' %}
 
 {% block content %}
-    <div class="col-xs-12">
+<section class="row main">
+    <div class="col-xs-12 col-md-4 center-xs contacto">
         <h2>Nueva noticia</h2>
         <form method="POST" class="post-form" enctype="multipart/form-data">{% csrf_token %}
             {{ formNoti.as_p }}
-            <button type="submit" class="save btn btn-default">Save</button>
+            <button type="submit" class="save btn btn-default">Guardar</button>
         </form>
     </div>
-    
+</section>    
 {% endblock %}
