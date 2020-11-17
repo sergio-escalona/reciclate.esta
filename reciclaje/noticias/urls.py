@@ -24,7 +24,8 @@ urlpatterns = [
     path('noticia/<int:pk>/eliminar', views.eliminar_noticia, name='eliminar_noticia'),
     path('cuenta/', include('django.contrib.auth.urls')),
     url(r'^', include(router.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('social/', include('social_django.urls', namespace='social')),
 ]
 
 if settings.DEBUG:
