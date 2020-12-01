@@ -21,9 +21,13 @@
                         <p><a href="{% url 'password_reset' %}">Recuperar contraseña</a></p>
                     </form>
                 </div>
-                <a href="{% url 'social:begin' 'facebook' %}">Facebook Login</a>
-                <br>
-                <a href="{% url 'social:begin' 'google-oauth2' %}">Google Login</a>
+                <div class="card-body">
+                    <hr>
+                    <h2>Ingreso con redes sociales</h2>
+                    <a href="{% url 'social:begin' 'facebook' %}"><img src="{% static 'img/face.png' %}" alt="Facebook" class="login"></a>
+                    <a href="{% url 'social:begin' 'google-oauth2' %}"><img src="{% static 'img/gmail.png' %}" alt="GMail" class="login"></a>
+                </div>
+                
             </div>
 
         </div>

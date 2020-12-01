@@ -122,6 +122,12 @@ footer img{
   width: 50px;
 }
 
+.login{
+  height: 50px;
+  width: 50px;
+  padding-left: 40px;
+}
+
 /*Ventana nosotros*/
 .contenedor-nosotros{
   max-width: 1200px;
