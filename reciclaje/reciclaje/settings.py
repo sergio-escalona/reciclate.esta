@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'rest_framework',
     'social_django',
+    'pwa',
 ]
 
 REST_FRAMEWORK = {
@@ -158,3 +159,24 @@ SOCIAL_AUTH_FACEBOOK_SECRET = 'a51bbcf6d8283e75ab04cd33a94d3af5'
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '340031051082-r2g12vj10cp2v0916iaq0qmvp5de0hgk.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'OxIbOF-g_QrjErtJBiPxOQm3'
+
+PWA_APP_NAME = "reciclate_esta"
+PWA_APP_DESCRIPTION = "Web de reciclaje"
+PWA_APP_THEME_COLOR = "#00b118"
+PWA_APP_BACKGROUND_COLOR = "#008000"
+
+PWA_APP_ICONS = [
+    {
+        "src": "/static/img/logo_pwa.png",
+        "sizes": "160x160"
+    }
+]
+
+PWA_APP_ICONS_APPLE = [
+    {
+        "src": "/static/img/logo_pwa.png",
+        "sizes": "160x160"
+    }
+]
+
+PWA_SERVICE_WORKER_PATH =   os.path.join(BASE_DIR, "serviceworker.js")
