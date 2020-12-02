@@ -6,7 +6,7 @@ from django.utils import timezone
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ('url', 'username', 'email', 'groups')
+        fields = ('url', 'username', 'password', 'email', 'groups')
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
