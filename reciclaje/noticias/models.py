@@ -10,7 +10,7 @@ etiquetas = [
 class Noticias(models.Model):
     autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     titulo = models.CharField(max_length=200)
-    imagen = models.ImageField(upload_to="imagenes", null=True)
+    imagen = models.ImageField(upload_to="imagenes", null=True, blank=True)
     texto = models.TextField()
     etiqueta = models.IntegerField(choices=etiquetas)
     fecha_creacion = models.DateTimeField(
